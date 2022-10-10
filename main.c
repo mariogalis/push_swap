@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:46:49 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/10 14:21:44 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/10 18:33:10 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	printList(t_list *list)
 	printf("LISTA :");
 	printf("\n");
 	t_list *current_node = list;
-	while ( current_node != NULL) 
+	while (current_node != NULL) 
 	{
 		printf("%d ", current_node->content);
 		printf("\n");
@@ -28,14 +28,16 @@ void	printList(t_list *list)
 
 int	main (int argc, char *argv[])
 {
-	t_list *stackA;
-	t_list *stackB = ft_lstnew(0);
+	t_list *stackA = NULL;
+	t_list *stackB = ft_lstnew(6);
 
-	stackB->content = 12;
 	if(argc <= 1)
 		display("WRONG NUMBER OF ARGUMENTS \n\n",1);
 	stackA = makeList(argc,argv);
 	checkeverything(stackA);
+	printList(stackA);
+	printList(stackB);
+	//sortsmol(&stackA);
 	printList(stackA);
 	return (0);
 }

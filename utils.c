@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:50:13 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/10 14:53:54 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/10 18:28:44 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,21 @@ void	ft_free(char **numbers)
 	while (numbers[i])
 		free(numbers[i++]);
 	free(numbers);
+}
+
+int	findmin(t_list *stack)
+{
+	t_list	*min;
+	int		lon;
+
+	min = stack;
+	lon = ft_lstsize(stack);
+	while (lon != 0)
+	{
+		if (stack->content < min->content)
+			min = stack;
+		stack = stack->next;
+		lon --;
+	}
+	return ((*min).content);
 }

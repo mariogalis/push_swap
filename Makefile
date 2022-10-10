@@ -6,11 +6,11 @@
 #    By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 16:44:51 by magonzal          #+#    #+#              #
-#    Updated: 2022/10/10 13:01:34 by magonzal         ###   ########.fr        #
+#    Updated: 2022/10/10 18:27:49 by magonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= main.c makeList.c utils.c checker.c
+SRCS	= main.c makeList.c utils.c checker.c moves.c sortsmol.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -20,7 +20,7 @@ CC	= gcc
 
 RM	= rm -f
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
 
 LIBFT = 42_libft/libft.a
 
