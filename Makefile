@@ -6,11 +6,11 @@
 #    By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 16:44:51 by magonzal          #+#    #+#              #
-#    Updated: 2022/10/05 17:06:33 by magonzal         ###   ########.fr        #
+#    Updated: 2022/10/10 13:01:34 by magonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= main.c makeList.c utils.c
+SRCS	= main.c makeList.c utils.c checker.c
 
 OBJS	= ${SRCS:.c=.o}
 

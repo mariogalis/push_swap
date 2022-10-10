@@ -6,18 +6,33 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:50:13 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/05 14:52:10 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/10 14:53:54 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	display(char *str)
+void	display(char *str,int opt)
 {
 	int	len;
 
 	len = ft_strlen(str);
-	write(1,"ERROR :",7);
-	write(2, str, len);
-	exit(0);
+	if(opt == 1)
+	{
+		write(1,"\n\tERROR :",10);
+		write(2, str, len);
+		exit(0);
+	}
+	else
+		write(1, str, len);
+	
+}
+void	ft_free(char **numbers)
+{
+	int	i;
+
+	i = 0;
+	while (numbers[i])
+		free(numbers[i++]);
+	free(numbers);
 }
