@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void	printList(t_list *list)
+void	printList(t_list *list,char opt)
 {
-	printf("LISTA :");
+	printf("LISTA %c:",opt);
 	printf("\n");
 	t_list *current_node = list;
 	while (current_node != NULL) 
@@ -29,15 +29,14 @@ void	printList(t_list *list)
 int	main (int argc, char *argv[])
 {
 	t_list *stackA = NULL;
-	t_list *stackB = ft_lstnew(6);
+	t_list *stackB = ft_lstnew(0);
 
 	if(argc <= 1)
 		display("WRONG NUMBER OF ARGUMENTS \n\n",1);
 	stackA = makeList(argc,argv);
 	checkeverything(stackA);
-	printList(stackA);
-	printList(stackB);
-	//sortsmol(&stackA);
-	printList(stackA);
+	printList(stackA,'A');
+	sortsmol(&stackA, &stackB);
+	//printList(stackA);
 	return (0);
 }

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	isinorder(t_list *aux)
+int	isinorder(t_list *aux)
 {
 	t_list	*head;
 
@@ -20,11 +20,10 @@ void	isinorder(t_list *aux)
 	while (head->next != NULL)
 	{
 		if (head->content > head->next->content)
-			return ;
+			return (1);
 		head = head->next;
 	}
-	display(" Is in order you morron \n\n", 1);
-	exit(0);
+	return (0);
 }
 
 void	repeated(t_list *aux)
@@ -80,6 +79,7 @@ int	ft_isnumber(char *str)
 
 void	checkeverything(t_list *aux)
 {
-	isinorder(aux);
+	if(isinorder(aux) == 0)
+		display("IS IN ORDER YOU MORRON",1);
 	repeated(aux);
 }

@@ -37,7 +37,7 @@ void	push(t_list **src, t_list **dest, char option)
 	aux = *src;
 	*src = (*src)->next;
 	free(aux);
-	printf("s%c\n", option);
+	printf("p%c\n", option);
 }
 
 void	rotate(t_list **stack, char option)
@@ -48,7 +48,7 @@ void	rotate(t_list **stack, char option)
 	*stack = (*stack)->next;
 	aux->next = NULL;
 	ft_lstadd_back(stack, aux);
-	printf("s%c\n", option);
+	printf("r%c\n", option);
 }
 
 void	reverserotate(t_list **stack, char option)

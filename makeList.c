@@ -26,7 +26,7 @@ t_list *makeList(int argc, char *argv[])
 		onlynum(nums);
 		num = atoi(nums[0]);
 		stackA = ft_lstnew(num);
-		while(nums[i] != '\0')
+		while(nums[i] != NULL)
 		{
 			num = atoi(nums[i]);
 			ft_lstadd_back(&stackA, ft_lstnew(num));
