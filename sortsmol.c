@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 13:40:13 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/10 18:30:46 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/12 13:37:10 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,21 @@
 
 void	sortsmol(t_list **stackA, t_list **stackB)
 {
-	if(ft_lstsize(*stackA) == 2)
+	if (ft_lstsize(*stackA) == 2)
 	{
 		printf("leo2");
-		if((*stackA)->content > (*stackA)->next->content)
-			swap(stackA,'a');
+		if ((*stackA)->content > (*stackA)->next->content)
+			swap(stackA, 'a');
 	}
 	else if (ft_lstsize(*stackA) == 3)
 	{
-		while(isinorder(*stackA) != 0)
+		while (isinorder(*stackA) != 0)
 			sortsmol3(stackA);
 	}
-		
 	else if (ft_lstsize(*stackA) == 4)
 		sortsmol4(stackA, stackB);
-	// else
-	// 	sortsmol5(stackA,stackB);
+	else if (ft_lstsize(*stackA) == 5)
+		sortsmol5(stackA, stackB);
 }
 
 void	sortsmol3(t_list **stackA)
@@ -43,7 +42,6 @@ void	sortsmol3(t_list **stackA)
 	c = (*stackA)->next->next->content;
 	if (a < b && b < c)
 		return ;
-		
 	else if (a > b && a < c)
 		swap(stackA, 'a');
 	else if (a > b && a > c)
@@ -64,18 +62,33 @@ void	sortsmol3(t_list **stackA)
 
 void	sortsmol4(t_list **stackA, t_list **stackB)
 {
-	int	min;
-	t_list *aux;
+	int		min;
+	t_list	*aux;
 
 	aux = *stackA;
 	min = findmin(*stackA);
-	(*stackB)->content = min;
 	while ((*stackA)->content != min)
 	{
-		(*stackA) = (*stackA)->next;
+		rotate(stackA, 'a');
 	}
-	printList(aux,'U');
-	printList(*stackB,'B');	
-	
-	
+	push(stackA, stackB, 'a');
+	while (isinorder(*stackA) != 0)
+		sortsmol3(stackA);
+	push(stackB, stackA, 'a');
+}
+
+void	sortsmol5(t_list **stackA, t_list **stackB)
+{
+	int		min;
+	t_list	*aux;
+
+	aux = *stackA;
+	min = findmin(*stackA);
+	while ((*stackA)->content != min)
+	{
+		rotate(stackA, 'a');
+	}
+	push(stackA, stackB, 'b');
+	sortsmol4(stackA, stackB);
+	push(stackB, stackA, 'a');
 }

@@ -6,17 +6,17 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:46:49 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/10 18:33:10 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/12 14:50:43 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	printList(t_list *list,char opt)
+void	printList(t_list **list,char opt)
 {
 	printf("LISTA %c:",opt);
 	printf("\n");
-	t_list *current_node = list;
+	t_list *current_node = *list;
 	while (current_node != NULL) 
 	{
 		printf("%d ", current_node->content);
@@ -29,14 +29,18 @@ void	printList(t_list *list,char opt)
 int	main (int argc, char *argv[])
 {
 	t_list *stackA = NULL;
-	t_list *stackB = ft_lstnew(0);
+	t_list *stackB = NULL;
 
 	if(argc <= 1)
 		display("WRONG NUMBER OF ARGUMENTS \n\n",1);
 	stackA = makeList(argc,argv);
 	checkeverything(stackA);
-	printList(stackA,'A');
-	sortsmol(&stackA, &stackB);
-	//printList(stackA);
+	
+	if(ft_lstsize(stackA) <= 5)
+		sortsmol(&stackA, &stackB);
+	else
+		radix(&stackA,&stackB);
+	printList(&stackA,'A');
 	return (0);
+	
 }
