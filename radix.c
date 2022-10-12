@@ -6,17 +6,11 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 13:07:38 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/12 13:15:51 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:25:03 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_free_temp(t_list **temp, t_list **temp2)
-{
-	ft_lstclear(temp);
-	ft_lstclear(temp2);
-}
 
 int	bit_size(int lstsize)
 {
