@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-
 t_list *makeList(int argc, char *argv[])
 {
 	t_list	*stackA = NULL;
@@ -33,15 +32,13 @@ t_list *makeList(int argc, char *argv[])
 			i++;
 		}
 	}
-
 	else if(argc > 2)
 	{
 		while(i <= argc - 1)
 		{
-			
 			num = atoi(argv[i]);
 			if (ft_isalnum(num) == 1)
-				display("ONLY NUMS PLEASE\n",1);
+				display("ONLY NUMS PLEASE\n",1,'x');
 			ft_lstadd_back(&stackA, ft_lstnew(num));
 			i++;
 		}

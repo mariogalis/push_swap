@@ -36,7 +36,7 @@ void	repeated(t_list *aux)
 		while (head != NULL)
 		{
 			if (aux->content == head->content)
-				display("repeated", 1);
+				display(" REPEATED\n", 1,'x');
 			head = head->next;
 		}
 		aux = aux->next;
@@ -56,7 +56,7 @@ void	onlynum(char **nums)
 			if (ft_strlen(nums[i]) > 11 || (ft_isnumber(nums[i])) == 0)
 			{
 				ft_free(nums);
-				display("ONLY NUMS PLEASE\n",1);
+				display(" ONLY NUMS PLEASE\n",1,'x');
 			}
 			j++;
 		}
@@ -80,6 +80,6 @@ int	ft_isnumber(char *str)
 void	checkeverything(t_list *aux)
 {
 	if(isinorder(aux) == 0)
-		display("IS IN ORDER YOU MORRON",1);
+		display("IS IN ORDER YOU MORRON\n",1,'x');
 	repeated(aux);
 }

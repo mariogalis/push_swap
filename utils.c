@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	display(char *str,int opt)
+void	display(char *str, int opt, char ab )
 {
 	int	len;
 
@@ -24,8 +24,11 @@ void	display(char *str,int opt)
 		exit(0);
 	}
 	else
+	{
 		write(1, str, len);
-	
+		write(1,&ab,1);
+		write(1,"\n",1);	
+	}
 }
 void	ft_free(char **numbers)
 {
@@ -52,4 +55,21 @@ int	findmin(t_list *stack)
 		lon --;
 	}
 	return ((*min).content);
+}
+
+int	findmax(t_list *stack)
+{
+	t_list	*max;
+	int		lon;
+
+	max = stack;
+	lon = ft_lstsize(stack);
+	while (lon != 0)
+	{
+		if (stack->content > max->content)
+			max = stack;
+		stack = stack->next;
+		lon --;
+	}
+	return ((*max).content);
 }

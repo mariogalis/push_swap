@@ -20,7 +20,7 @@
 # include <sys/types.h>
 # include "42_libft/libft.h"
 
-void	display(char *str,int opt);
+void	display(char *str,int opt,char ab);
 t_list	*makeList(int argc, char *argv[]);
 void	printList(t_list **list,char opt);
 void	checkeverything(t_list *aux);
@@ -38,5 +38,6 @@ int		findmin(t_list *stack);
 void	sortsmol4(t_list **stackA, t_list **stackB);
 void	sortsmol5(t_list **stackA, t_list **stackB);
 void	radix(t_list **stackA , t_list **stackB);
+int	    findmax(t_list *stack);
 
 #endif

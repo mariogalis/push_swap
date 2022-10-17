@@ -34,16 +34,17 @@ void	radix(t_list **stackA, t_list **stackB)
 
 	size = ft_lstsize(*stackA);
 	bit = 0;
-	nbr_bits = bit_size(ft_lstsize(*stackA));
+	nbr_bits = bit_size(findmax(*stackA));
 	while (bit < nbr_bits)
 	{
 		i = 0;
-		while (i++ < size)
+		while (i < size)
 		{
 			if (((*stackA)->content >> bit) % 2 == 0)
 				push(stackA, stackB, 'b');
 			else
 				rotate(stackA, 'a');
+			i++;
 		}
 		while (*stackB)
 			push(stackB, stackA, 'a');

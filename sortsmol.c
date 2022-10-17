@@ -63,9 +63,7 @@ void	sortsmol3(t_list **stackA)
 void	sortsmol4(t_list **stackA, t_list **stackB)
 {
 	int		min;
-	t_list	*aux;
 
-	aux = *stackA;
 	min = findmin(*stackA);
 	while ((*stackA)->content != min)
 	{
@@ -80,9 +78,7 @@ void	sortsmol4(t_list **stackA, t_list **stackB)
 void	sortsmol5(t_list **stackA, t_list **stackB)
 {
 	int		min;
-	t_list	*aux;
 
-	aux = *stackA;
 	min = findmin(*stackA);
 	while ((*stackA)->content != min)
 	{

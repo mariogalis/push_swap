@@ -18,14 +18,14 @@ void	swap(t_list **stack, char option)
 
 	aux = *stack;
 	if (!stack)
-		display("EMPTY STACK",1);
+		display("EMPTY STACK\n",1,'x');
 	else if ((*stack)->next)
 	{
 		aux = (*stack)->next;
 		(*stack)->next = aux->next;
 		ft_lstadd_front(stack, aux);
 	}
-	printf("s%c\n", option);
+	display("s",0,option);
 }
 
 void	push(t_list **src, t_list **dest, char option)
@@ -37,7 +37,7 @@ void	push(t_list **src, t_list **dest, char option)
 	aux = *src;
 	*src = (*src)->next;
 	free(aux);
-	printf("p%c\n", option);
+	display("p",0,option);
 }
 
 void	rotate(t_list **stack, char option)
@@ -48,7 +48,7 @@ void	rotate(t_list **stack, char option)
 	*stack = (*stack)->next;
 	aux->next = NULL;
 	ft_lstadd_back(stack, aux);
-	printf("r%c\n", option);
+	display("r",0,option);
 }
 
 void	reverserotate(t_list **stack, char option)
@@ -63,5 +63,5 @@ void	reverserotate(t_list **stack, char option)
 	temp->next = NULL;
 	ft_lstadd_front(stack, last);
 	if (option != 'c')
-		printf("rr%c\n", option);;
+		display("rr",0,option);
 }
