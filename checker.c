@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:50:26 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/10 14:45:13 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/18 14:08:45 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,13 @@ void	repeated(t_list *aux)
 		while (head != NULL)
 		{
 			if (aux->content == head->content)
-				display(" REPEATED\n", 1,'x');
+				display(" REPEATED\n", 1, 'x');
 			head = head->next;
 		}
 		aux = aux->next;
 	}
 }
+
 void	onlynum(char **nums)
 {
 	int	i;
@@ -53,16 +54,15 @@ void	onlynum(char **nums)
 		j = 0;
 		while (nums[i][j])
 		{
-			if (ft_strlen(nums[i]) > 11 || (ft_isnumber(nums[i])) == 0)
+			if (atoi(nums[i]) > INT_MAX || (ft_isnumber(nums[i])) == 0)
 			{
 				ft_free(nums);
-				display(" ONLY NUMS PLEASE\n",1,'x');
+				display(" ONLY NUMS PLEASE\n", 1, 'x');
 			}
 			j++;
 		}
 		i++;
 	}
-
 }
 
 int	ft_isnumber(char *str)
@@ -79,7 +79,8 @@ int	ft_isnumber(char *str)
 
 void	checkeverything(t_list *aux)
 {
-	if(isinorder(aux) == 0)
-		display("IS IN ORDER YOU MORRON\n",1,'x');
 	repeated(aux);
+	if (isinorder(aux) == 0)
+		display("IS IN ORDER YOU MORRON\n", 1, 'x');
+	
 }

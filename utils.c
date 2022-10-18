@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:50:13 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/10 18:28:44 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/18 14:05:14 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,20 @@ void	display(char *str, int opt, char ab )
 	int	len;
 
 	len = ft_strlen(str);
-	if(opt == 1)
+	if (opt == 1)
 	{
-		write(1,"\n\tERROR :",10);
-		write(2, str, len);
+		write(1, "Error\n", 6);
+		//write(2, str, len);
 		exit(0);
 	}
 	else
 	{
 		write(1, str, len);
-		write(1,&ab,1);
-		write(1,"\n",1);	
+		write(1, &ab, 1);
+		write(1, "\n", 1);
 	}
 }
+
 void	ft_free(char **numbers)
 {
 	int	i;

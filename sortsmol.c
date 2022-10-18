@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 13:40:13 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/12 13:37:10 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/18 14:00:59 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	sortsmol4(t_list **stackA, t_list **stackB)
 	{
 		rotate(stackA, 'a');
 	}
-	push(stackA, stackB, 'a');
+	push(stackA, stackB, 'b');
 	while (isinorder(*stackA) != 0)
 		sortsmol3(stackA);
 	push(stackB, stackA, 'a');

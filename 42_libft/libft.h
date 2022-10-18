@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 18:14:29 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/05 17:21:58 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/18 12:12:11 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 
 typedef struct s_list
 {
-	int			content;
+	int				content;
 	struct s_list	*next;
 }	t_list;
 

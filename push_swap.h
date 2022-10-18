@@ -6,13 +6,12 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:47:27 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/12 13:10:06 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/18 12:33:50 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-
-# define PUSHSWAP_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -20,9 +19,9 @@
 # include <sys/types.h>
 # include "42_libft/libft.h"
 
-void	display(char *str,int opt,char ab);
-t_list	*makeList(int argc, char *argv[]);
-void	printList(t_list **list,char opt);
+void	display(char *str, int opt, char ab);
+t_list	*makelist(int argc, char *argv[]);
+void	printList(t_list **list, char opt);
 void	checkeverything(t_list *aux);
 void	onlynum(char **nums);
 void	ft_free(char **numbers);
@@ -37,7 +36,7 @@ void	sortsmol3(t_list **stackA);
 int		findmin(t_list *stack);
 void	sortsmol4(t_list **stackA, t_list **stackB);
 void	sortsmol5(t_list **stackA, t_list **stackB);
-void	radix(t_list **stackA , t_list **stackB);
-int	    findmax(t_list *stack);
+void	radix(t_list **stackA, t_list **stackB);
+int		findmax(t_list *stack);
 
 #endif

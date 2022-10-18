@@ -6,43 +6,52 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:53:22 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/10 14:54:51 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/18 14:09:36 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list *makeList(int argc, char *argv[])
+t_list	*makelistaux(int argc, char *argv[], t_list *stacka)
 {
-	t_list	*stackA = NULL;
-	int		i = 1;
+	int	num;
+	int	i;
+
+	i = 1;
+	while (i <= argc - 1)
+	{
+		if (atoi(argv[i]) > INT_MAX || ft_strlen(argv[i]) > 11)
+			display("ONLY NUMS PLEASE\n", 1, 'x');
+		num = atoi(argv[i]);
+		ft_lstadd_back(&stacka, ft_lstnew(num));
+		i++;
+	}
+	return (stacka);
+}
+
+t_list	*makelist(int argc, char *argv[])
+{
+	t_list	*stacka;
+	int		i;
 	int		num;
 	char	**nums;
 
-	if(argc == 2)
+	stacka = NULL;
+	i = 1;
+	if (argc == 2)
 	{
 		nums = ft_split(argv[1], ' ');
 		onlynum(nums);
 		num = atoi(nums[0]);
-		stackA = ft_lstnew(num);
-		while(nums[i] != NULL)
+		stacka = ft_lstnew(num);
+		while (nums[i] != NULL)
 		{
 			num = atoi(nums[i]);
-			ft_lstadd_back(&stackA, ft_lstnew(num));
+			ft_lstadd_back(&stacka, ft_lstnew(num));
 			i++;
 		}
 	}
-	else if(argc > 2)
-	{
-		while(i <= argc - 1)
-		{
-			num = atoi(argv[i]);
-			if (ft_isalnum(num) == 1)
-				display("ONLY NUMS PLEASE\n",1,'x');
-			ft_lstadd_back(&stackA, ft_lstnew(num));
-			i++;
-		}
-	}
-	return stackA;
+	else if (argc > 2)
+		stacka = makelistaux(argc, argv, stacka);
+	return (stacka);
 }
-
