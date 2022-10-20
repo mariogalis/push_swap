@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 11:10:39 by magonzal          #+#    #+#             */
-/*   Updated: 2022/04/26 13:58:23 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/20 15:03:59 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(int content)
 	if (!new)
 		return (NULL);
 	new->content = content;
+	new->idx = 0;
 	new->next = NULL;
 	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:46:49 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/18 14:56:21 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/20 15:02:48 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	printList(t_list **list,char opt)
 	t_list *current_node = *list;
 	while (current_node != NULL) 
 	{
-		printf("%d ", current_node->content);
+		printf("%d ", current_node->idx);
 		printf("\n");
 		current_node = current_node->next;
 	}
@@ -40,9 +40,7 @@ int	main(int argc, char *argv[])
 		sortsmol(&stacka, &stackb);
 	else
 	{
-		printList(&stacka, 'a');
-		exit(0);
-		radix(&stacka, &stackb);
+		ft_index(stacka, stackb);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 13:07:38 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/18 14:16:41 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/20 15:00:38 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	radix(t_list **stacka, t_list **stackb)
 		i = 0;
 		while (i < size)
 		{
-			if (((*stacka)->content >> bit) % 2 == 0)
+			if (((*stacka)->idx >> bit) % 2 == 0)
 				push(stacka, stackb, 'b');
 			else
 				rotate(stacka, 'a');
