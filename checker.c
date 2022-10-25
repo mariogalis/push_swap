@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:50:26 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/18 14:08:45 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/25 14:55:04 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,4 @@ void	checkeverything(t_list *aux)
 	repeated(aux);
 	if (isinorder(aux) == 0)
 		display("IS IN ORDER YOU MORRON\n", 1, 'x');
-	
 }

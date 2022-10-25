@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:01:11 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/20 15:02:02 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/25 14:54:24 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,13 @@
 t_list	*maxaddr(t_list *stack)
 {
 	t_list	*max;
-	int		lon;
 
 	max = stack;
-	lon = ft_lstsize(stack);
-	while (lon != 0)
+	while (stack)
 	{
 		if (stack->content > max->content)
 			max = stack;
 		stack = stack->next;
-		lon --;
 	}
 	return (max);
 }
@@ -32,58 +29,53 @@ t_list	*maxaddr(t_list *stack)
 t_list	*minaddr(t_list *stack)
 {
 	t_list	*min;
-	int		lon;
 
 	min = stack;
-	lon = ft_lstsize(stack);
-	while (lon != 0)
+	while (stack)
 	{
 		if (stack->content < min->content)
 			min = stack;
 		stack = stack->next;
-		lon --;
 	}
 	return (min);
 }
 
-t_list	*min(t_list **stack, t_list * lstmin, int i)
+t_list	*findnextmin(t_list *stack, t_list *last_min)
 {
-	t_list * temp_min;
-	t_list * temp;
+	t_list	*min;
 
-	temp_min = maxaddr(*stack);
-	temp = *stack;
-	if (!lstmin)
+	min = maxaddr(stack);
+	if (!last_min)
+		return (minaddr(stack));
+	else if (last_min->content == min->content)
+		return (NULL);
+	while (stack)
 	{
-		lstmin = minaddr(*stack);
-		lstmin->idx = i;
-		return (lstmin);
+		if (stack->content < min->content && last_min->content < stack->content)
+			min = stack;
+		stack = stack->next;
 	}
-	while (temp)
-	{
-		if (temp->content > lstmin->content && temp->content < temp_min->content)
-			temp_min = temp;
-		temp = temp->next;
-	}
-	temp_min->idx = i;
-	return(temp);
+	return (min);
 }
 
-void	ft_index(t_list *stacka,t_list *stackb)
+t_list	*ft_index(t_list **stacka, t_list **stackb)
 {
 	int		i;
-	int		lstsize;
 	t_list	*lstmin;
+	t_list	*save;
 
 	i = 0;
-	lstsize = ft_lstsize(stacka);
-	lstmin = NULL;
-	while (i < lstsize)
+	save = *stacka;
+	stackb = NULL;
+	lstmin = *stacka;
+	lstmin = minaddr(save);
+	(lstmin)->idx = i;
+	i = 1;
+	while (i < ft_lstsize(save))
 	{
-		lstmin = min(&stacka,lstmin,i);
+		lstmin = findnextmin(save, lstmin);
+		(lstmin)->idx = i;
 		i++;
 	}
-	printList(&stacka, 'a');
-	exit(1);
-	radix (&stacka, &stackb);
+	return (*stacka);
 }

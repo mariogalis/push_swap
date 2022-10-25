@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 13:40:13 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/18 14:00:59 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/25 14:56:33 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,12 @@ void	sortsmol4(t_list **stackA, t_list **stackB)
 void	sortsmol5(t_list **stackA, t_list **stackB)
 {
 	int		min;
+	t_list	*aux;
 
+	aux = *stackA;
 	min = findmin(*stackA);
+	if (ft_lstlast(aux)->content == min)
+		reverserotate(stackA, 'a');
 	while ((*stackA)->content != min)
 	{
 		rotate(stackA, 'a');

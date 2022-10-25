@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:16:03 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/18 12:31:34 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/25 14:25:00 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	push(t_list **src, t_list **dest, char option)
 	t_list	*aux;
 
 	aux = ft_lstnew((*src)->content);
+	aux->idx = (*src)->idx;
 	ft_lstadd_front(dest, aux);
 	aux = *src;
 	*src = (*src)->next;

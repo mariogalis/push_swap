@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:50:13 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/18 14:05:14 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/25 14:57:06 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	display(char *str, int opt, char ab )
 	if (opt == 1)
 	{
 		write(1, "Error\n", 6);
-		//write(2, str, len);
+		write(2, str, len);
 		exit(0);
 	}
 	else
@@ -58,19 +58,16 @@ int	findmin(t_list *stack)
 	return ((*min).content);
 }
 
-int	findmax(t_list *stack)
+int	findmax(t_list *stacka)
 {
 	t_list	*max;
-	int		lon;
 
-	max = stack;
-	lon = ft_lstsize(stack);
-	while (lon != 0)
+	max = stacka;
+	while (stacka)
 	{
-		if (stack->content > max->content)
-			max = stack;
-		stack = stack->next;
-		lon --;
+		if (stacka->idx > max->idx)
+			max = stacka;
+		stacka = stacka->next;
 	}
-	return ((*max).content);
+	return (max->idx);
 }
