@@ -6,7 +6,7 @@
 #    By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 16:44:51 by magonzal          #+#    #+#              #
-#    Updated: 2022/10/20 14:35:30 by magonzal         ###   ########.fr        #
+#    Updated: 2022/10/27 12:57:10 by magonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CC	= gcc
 
 RM	= rm -f
 
-CFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror #-g3 -fsanitize=address
 
 LIBFT = 42_libft/libft.a
 

@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:47:27 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/25 14:55:59 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/27 13:58:09 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void	sortsmol5(t_list **stackA, t_list **stackB);
 void	radix(t_list **stackA, t_list **stackB);
 int		findmax(t_list *stack);
 t_list	*ft_index(t_list **stacka, t_list **stackb);
+int		checknums(char *s);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:50:13 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/25 14:57:06 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/27 14:06:40 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ void	display(char *str, int opt, char ab )
 	len = ft_strlen(str);
 	if (opt == 1)
 	{
-		write(1, "Error\n", 6);
+		write(1, "ERROR ", 6);
 		write(2, str, len);
+		write(1, "\n", 1);
 		exit(0);
 	}
 	else
