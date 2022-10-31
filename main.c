@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:46:49 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/27 13:12:03 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/31 13:23:57 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	main(int argc, char *argv[])
 	t_list	*stacka;
 	t_list	*stackb;
 
-	if (*argv[1] == '\0')
-		display("WRONG ARGUMENTS", 1, 'x');
+	if (!*argv)
+		display("WRONG ARGUMENTS \n", 1, 'x');
+	if (argc <= 1)
+		display("WRONG NUMBER OF ARGUMENTS \n", 1, 'x');
 	stacka = NULL;
 	stackb = NULL;
-	if (argc <= 1)
-		display("WRONG NUMBER OF ARGUMENTS \n\n", 1, 'x');
 	stacka = makelist(argc, argv);
 	checkeverything(stacka);
 	if (ft_lstsize(stacka) <= 5)

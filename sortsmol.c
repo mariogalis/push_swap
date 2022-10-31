@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 13:40:13 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/25 14:56:33 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/31 13:01:02 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	sortsmol(t_list **stackA, t_list **stackB)
 {
 	if (ft_lstsize(*stackA) == 2)
 	{
-		printf("leo2");
 		if ((*stackA)->content > (*stackA)->next->content)
 			swap(stackA, 'a');
 	}
