@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:53:22 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/27 14:23:30 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/10/31 12:52:02 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,25 @@ t_list	*makelistaux(int argc, char *argv[], t_list *stacka)
 	return (stacka);
 }
 
+void	checkempty(char *str)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (str[j])
+	{
+		if (str[j] < 57 && str[j] > 48)
+			i++;
+		j++;
+	}
+	if (i != 0)
+		return ;
+	else
+		display("ONLY NUMS PLEASE\n", 1, 'x');
+}
+
 t_list	*makelist(int argc, char *argv[])
 {
 	t_list	*stacka;
@@ -42,6 +61,7 @@ t_list	*makelist(int argc, char *argv[])
 	i = 1;
 	if (argc == 2)
 	{
+		checkempty(argv[1]);
 		nums = ft_split(argv[1], ' ');
 		onlynum(nums);
 		num = atoi(nums[0]);
