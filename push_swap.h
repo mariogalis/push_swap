@@ -6,13 +6,12 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:47:27 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/27 13:58:09 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:02:00 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>

@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:50:26 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/31 12:37:03 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:43:46 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,22 @@ void	repeated(t_list *aux)
 	}
 }
 
-void	onlynum(char **nums)
+void	onlynum(char **n)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (nums[i])
+	while (n[i])
 	{
 		j = 0;
-		while (nums[i][j])
+		while (n[i][j])
 		{
-			if (atoi(nums[i]) > INT_MAX || (ft_isnumber(nums[i])) == 0)
+			if (ft_atoi(n[i]) > INT_MAX || (ft_isnumber(n[i])) == 0
+				|| ft_strlen(n[i]) > 11)
 			{
-				ft_free(nums);
-				display(" ONLY NUMS PLEASE\n", 1, 'x');
+				ft_free(n);
+				display(" ONLY N PLEASE\n", 1, 'x');
 			}
 			j++;
 		}
@@ -81,5 +82,5 @@ void	checkeverything(t_list *aux)
 {
 	repeated(aux);
 	if (isinorder(aux) == 0)
-		display("IS IN ORDER YOU MORRON\n", 1, 'x');
+		exit(1);
 }

@@ -6,7 +6,7 @@
 /*   By: magonzal <magonzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:53:22 by magonzal          #+#    #+#             */
-/*   Updated: 2022/10/31 12:52:02 by magonzal         ###   ########.fr       */
+/*   Updated: 2022/11/14 15:52:25 by magonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ t_list	*makelistaux(int argc, char *argv[], t_list *stacka)
 	{
 		if (checknums(argv[i]) == 0)
 			display("ONLY NUMS PLEASE\n", 1, 'x');
-		if (atoi(argv[i]) > INT_MAX || ft_strlen(argv[i]) > 11)
+		if (ft_atoi(argv[i]) > INT_MAX || ft_strlen(argv[i]) > 11)
 			display("ONLY NUMS PLEASE\n", 1, 'x');
-		num = atoi(argv[i]);
+		num = ft_atoi(argv[i]);
 		ft_lstadd_back(&stacka, ft_lstnew(num));
 		i++;
 	}
@@ -64,11 +64,11 @@ t_list	*makelist(int argc, char *argv[])
 		checkempty(argv[1]);
 		nums = ft_split(argv[1], ' ');
 		onlynum(nums);
-		num = atoi(nums[0]);
+		num = ft_atoi(nums[0]);
 		stacka = ft_lstnew(num);
 		while (nums[i] != NULL)
 		{
-			num = atoi(nums[i]);
+			num = ft_atoi(nums[i]);
 			ft_lstadd_back(&stacka, ft_lstnew(num));
 			i++;
 		}
